@@ -1,0 +1,13 @@
+
+IMAGE=kaki-zookeeper
+HOST=zookeeper
+IMAGE_VERSION=0.0.1
+CONTAINER=$IMAGE
+ZOOKEEPER_PORT=2181
+
+#REGISTRY=registry.ng.bluemix.net/mynodeappbue
+
+#SRC_IMG=spotify/kafka
+#BLUEMIX_IMG=$REGISTRY/$IMG
+#BLUEMIX_CONTAINER_MEMORY=128
+#IP=169.44.6.146
