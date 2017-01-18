@@ -11,9 +11,11 @@ ENV ZK_DIR /opt/zookeeper
 ENV ZK_DATA_DIR /opt/data
 ENV ZK_CONF_DIR $ZK_DIR/conf
 ENV CONF zoo.cfg
+
 ENV ZK_CL_PORT 2181
 ENV ZK_FO_PORT 2888
 ENV ZK_EL_PORT 3888
+
 
 RUN mkdir -p $ZK_DATA_DIR
 
@@ -32,6 +34,7 @@ ADD $CONF $ZK_CONF_DIR/$CONF
 WORKDIR $ROOT
 
 EXPOSE $ZK_CL_PORT $ZK_FO_PORT $ZK_EL_PORT
+
 ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
 
