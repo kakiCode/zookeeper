@@ -1,7 +1,7 @@
 
-NETWORK=kaki
+#NETWORK=kaki
 IMAGE=kaki-zookeeper
-IMAGE_VERSION=0.0.1
+IMAGE_VERSION=latest
 CONTAINER=zookeeper
 HOST=$CONTAINER
 
