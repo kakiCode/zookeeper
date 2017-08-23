@@ -1,16 +1,16 @@
 #!/bin/sh
 
-devops_folder=$(dirname $(readlink -f $0))
-base_folder=$(dirname $devops_folder)
+scripts_folder=$(dirname $(readlink -f $0))
+base_folder=$(dirname $scripts_folder)
 
-. $devops_folder/VARS.sh
+. $scripts_folder/VARS.sh
 
 #IMAGE_ID=`docker images | grep -E "^$IMAGE.*latest" | awk -e '{print $3}'`
 #echo "...image id: $IMAGE_ID"
 #docker tag $IMAGE_ID $BLUEMIX_IMG
 #docker push $BLUEMIX_IMG
 
-CONTAINER_ID=`cf ic ps -a | grep -E "$BLUEMIX_IMG:latest" | awk -e '{print $1}'`
+CONTAINER_ID=`cf ic ps -a | grep -E "$BLUEMIX_IMG:$IMAGE_VERSION" | awk -e '{print $1}'`
 echo "...container id: $CONTAINER_ID"
 
 if [ ! -z "$CONTAINER_ID" ]; then
