@@ -1,9 +1,11 @@
 
 #NETWORK=kaki
+
 NAME=zookeeper
 IMAGE=kaki-$NAME
 IMAGE_VERSION=latest
 CONTAINER=$NAME
+
 HOST=$CONTAINER
 
 # zookeeper client, follower and election ports
