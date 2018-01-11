@@ -1,13 +1,13 @@
 # zookeeper
 
 ## zookeeper docker image
-
+```
 hostname: zookeeper 
 container name: zookeeper 
 ports:
 	2181 - client
 	2888, 3888 - follower and election
-
+```
 ### usage:
 
 - edit VARS.sh accordingly:
