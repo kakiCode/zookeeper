@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ENV ROOT /
 ENV BUILD_DIR /tmp
-ENV ZK_VERSION "3.4.9"
+ENV ZK_VERSION "3.4.10"
 ENV ZK_BUNDLE zookeeper-$ZK_VERSION.tar.gz
 ENV ZK_BUNDLE_DIR zookeeper-$ZK_VERSION
 ENV ZK_DIR /opt/zookeeper
@@ -12,10 +12,10 @@ ENV ZK_DATA_DIR /opt/data
 ENV ZK_CONF_DIR $ZK_DIR/conf
 ENV CONF zoo.cfg
 
+# zookeeper client, follower and election ports
 ENV ZK_CL_PORT 2181
 ENV ZK_FO_PORT 2888
 ENV ZK_EL_PORT 3888
-
 
 RUN mkdir -p $ZK_DATA_DIR
 
@@ -24,7 +24,7 @@ WORKDIR $BUILD_DIR
 RUN apt-get update && \
     apt-get install -y wget && \ 
     apt-get clean && \ 
-    wget --no-cookies --no-check-certificate http://ftp.heanet.ie/mirrors/www.apache.org/dist/zookeeper/zookeeper-$ZK_VERSION/$ZK_BUNDLE -O $ZK_BUNDLE && \ 
+    wget --no-cookies --no-check-certificate http://ftp.heanet.ie/mirrors/www.apache.org/dist/zookeeper/$ZK_BUNDLE_DIR/$ZK_BUNDLE -O $ZK_BUNDLE && \ 
     tar xzpvf $ZK_BUNDLE && \ 
     rm $ZK_BUNDLE && \ 
     mv $ZK_BUNDLE_DIR $ZK_DIR
